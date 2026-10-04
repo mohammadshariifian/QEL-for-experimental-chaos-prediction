@@ -1,18 +1,4 @@
 ######################## prediction.jl ########################
-# OPEN/CLOSED-loop prediction
-#
-# Mode selection:
-# - If RUN_CLOSED_LOOP = false:
-#     Run OPEN-loop only.
-#     Predict entire FUT using TRUE FUT data in the input windows (teacher forcing).
-#     Save figures/JLD2 with OPEN/open_teacherforced_only naming.
-#
-# - If RUN_CLOSED_LOOP = true:
-#     Run CLOSED-loop only.
-#     Predict FUT recursively.
-#     When an input lag lies inside T_FUT, use the previously predicted value.
-#     Save figures/JLD2 with CLOSED/closed_loop_only naming.
-#
 # Training:
 # - Train the m-horizon-ahead model on CONTEXT only.
 # - Use the same input-window construction for open-loop and closed-loop.
