@@ -1,6 +1,9 @@
 using Base.Threads
 using CSV, DataFrames, JSON, Dates
 using DelimitedFiles
+using Pkg
+const PROJECT_ROOT = @__DIR__
+Pkg.activate(PROJECT_ROOT)
 
 const DATA_MODE = :experiment
 # Valid values: :theory or :experiment
@@ -17,11 +20,11 @@ else
 end
 
 const THEORY_DATA_FILE = abspath(joinpath(
-    @__DIR__, "..", "..", "data", "output_320.csv"
+    @__DIR__, "..",  "data", "output_320.csv"
 ))
 
 const EXPERIMENT_DATA_FILE = abspath(joinpath(
-    @__DIR__, "..", "..", "data",
+    @__DIR__, "..",  "data",
     "board_1_run_61_new_lowpass.csv"
 ))
 
@@ -68,13 +71,11 @@ const PYTHON_EXE = let
     end
 end
 
-const OUTPUT_DIR = if Sys.iswindows()
-    raw"E:\quantum_reservoir\LSTM_output"
-elseif Sys.isapple()
-    "/Users/mohammad/Quantum Reservoir/LSTM_output"
-else
-    "/data/office/quantum_reservoir/LSTM_output"
-end
+const OUTPUT_DIR = get(
+    ENV,
+    "QEL_OUTPUT_DIR",
+    normpath(joinpath(PROJECT_ROOT, "..", "output")),
+)
 
 const ACTIVE_DATA_CONFIG = Ref{Any}(nothing)
 
