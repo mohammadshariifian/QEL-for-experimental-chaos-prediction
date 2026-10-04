@@ -1,0 +1,23 @@
+name = "VQC"
+uuid = "b597f56f-6168-435b-8703-992ba2924e08"
+version = "0.0.1"
+authors = ["Guo Chu <guochu604b@gmail.com>"]
+
+[deps]
+KrylovKit = "0b1a1467-8014-51b9-945f-bf0ae24f4b77"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+QuantumCircuits = "aefa5731-75ce-4e77-8b64-9dbb49b79a07"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+Zygote = "e88e6eb3-aa80-5325-afca-941959d7151f"
+
+[sources]
+QuantumCircuits = {path = "../QuantumCircuits_demo"}
+
+[compat]
+Random = "1.11.0"
+SparseArrays = "1.11.0"
+Statistics = "1.11.1"
+Zygote = "0.6"
