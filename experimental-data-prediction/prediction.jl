@@ -101,7 +101,7 @@ const RUN_BLOCKWISE_CLOSED_LOOP = false
 const TIMESTEPS_PER_QUBIT_LIST = INPUT_MAPPING_MODE == :layer ? (1:1) : (1:11)
 const LAYERS_LIST              = INPUT_MAPPING_MODE == :qubit ? (1:1) : (1:5)
 const MEMORY_LIST = (0:20)
-const MAX_TOTAL_QUBITS = 5
+const MAX_TOTAL_QUBITS = 11
 # Input features to include in the model.
 const INPUT_FEATURES = ["u1"]
 
