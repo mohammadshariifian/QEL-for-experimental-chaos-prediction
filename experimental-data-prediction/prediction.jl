@@ -148,7 +148,7 @@ const RAW_SAMPLE_STRIDE = 1
 
 # Theory/experiment intervals, measured in μs
 const T_CTX = (5.0, 210.0)
-const T_FUT = (210.0, 250.0)
+const T_FUT = (210.0, 300.0)
 
 const TIME_UNIT = "μs"
 
@@ -160,7 +160,7 @@ const ACTIVE_T_FUT = T_FUT
 const PLOT_T_RANGE = (210.0, 230.0)
 
 
-const BASE_DATA_DIR = normpath(joinpath(PROJECT_ROOT, "..", "data"))
+const BASE_DATA_DIR = normpath(joinpath(PROJECT_ROOT, "data"))
 
 const OUTPUT_DIR = get(
     ENV,
